@@ -23,8 +23,8 @@ local Window = Loaded_Main_Lua:CreateWindow({
 
 Window:EditOpenButton({
     StrokeThickness = 1,
-    Title = "打开", 
-    Color = ColorSequence.new(Color3.fromHex("#9F88FF"), Color3.fromHex("#28004D")), --颜色渐变
+    Title = "感染性微笑", 
+    Color = ColorSequence.new(Color3.fromHex("#0000C6"), Color3.fromHex("#FF00FF")), --颜色渐变
     Draggable = true, --是否可拖动 是
     Icon = "crown", --悬浮球图标
     CornerRadius = UDim.new(1, 0), --圆角
@@ -43,20 +43,20 @@ Window:Tag({
 
 local homeTab = Window:Tab({ --创建选择栏
     Title = "公告", --文本
-    Icon = "home", --图标
+    Icon = "home-2-bold", --图标
 })
 
 homeTab:Paragraph({ --文字/图片栏
     Image = "moon", --创建图标
     Title = "猫猫的第一个服务器脚本", --副标题
     ImageSize = 68, --图片大小
-    Desc = "qq群1005750419 增加了范围开关", --文本
+    Desc = "qq群展示没有", --文本
 })
 
 
 local homeTab = Window:Tab({ --创建选择栏
     Title = "幸存者", --文本
-    Icon = "home", --图标
+    Icon = "sword", --图标
 })  
 
 local Sectionh = homeTab:Section({
@@ -118,7 +118,6 @@ if game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"
     selBox.Adornee = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"):WaitForChild("Hitbox")
     selBox.Parent = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"):WaitForChild("Hitbox")
     game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"):WaitForChild("Hitbox").Size = Vector3.new(feedbackInput,feedbackInput,feedbackInput)
-
 end    
    task.wait(0)     
         end
@@ -137,7 +136,6 @@ if game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"
     selBox.Adornee = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"):WaitForChild("Handle")
     selBox.Parent = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"):WaitForChild("Handle")
     game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"):WaitForChild("Handle").Size = Vector3.new(feedbackInput,feedbackInput,feedbackInput)
-task.wait(0)
 end    
   task.wait(0)      
         end
@@ -167,39 +165,24 @@ local Sectionhh = homeTab:Section({
     Opened = true,
 })   
  
-   Sectionhh:Button({
-        Title = "修改透明",
-        Icon = "", -- 隐藏图标
-        Callback = function()
-game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"):WaitForChild("BodyAttach").Transparency = 1
-HighlightButton:Highlight()
-        end
-    })           
-    
-   Sectionhh:Button({
-        Title = "修改透明 - 长矛",
-        Icon = "", -- 隐藏图标
-        Callback = function()
-game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"):WaitForChild("Hitbox").Transparency = 1
-HighlightButton:Highlight()
-        end
-    })               
-    
-   Sectionhh:Button({
-        Title = "修改透明 - 树枝/瓶子",
-        Icon = "", -- 隐藏图标
-        Callback = function()
-game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"):WaitForChild("Handle").Transparency = 1
-HighlightButton:Highlight()
-        end
-    })               
-    
-
-
+Sectionhh:Toggle({
+    Value = false,
+    Callback = function(value)
+yc = value
+while yc do
+if game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool") then
+ game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"):FindFirstChildOfClass("MeshPart").Transparency = 1
+end
+task.wait(0)
+end
+    end,
+    Title = "武器透明",
+    Desc = "透明",
+})
 
 local homeTab = Window:Tab({ --创建选择栏
     Title = "感染者", --文本
-    Icon = "home", --图标
+    Icon = "laugh", --图标
 })    
     
 homeTab:Input({
@@ -226,7 +209,7 @@ HighlightButton:Highlight()
     
 local homeTab = Window:Tab({ --创建选择栏
     Title = "其他", --文本
-    Icon = "home", --图标
+    Icon = "gear", --图标
 })        
 
 local Sectionjb = homeTab:Section({
@@ -304,7 +287,7 @@ local uiTab = Window:Tab({ --创建选择栏
 })            
 
 uiTab:Dropdown({
-    Value = "Light",
+    Value = "Dark",
     Callback = function(value)
         Loaded_Main_Lua:SetTheme(value)
     end,
@@ -318,3 +301,5 @@ uiTab:Button({
         Window:Destroy()
     end,
 })
+
+ 
