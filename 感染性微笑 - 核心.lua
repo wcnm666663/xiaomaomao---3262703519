@@ -17,7 +17,7 @@ local Window = Loaded_Main_Lua:CreateWindow({
     Transparent = true,
     SideBarWidth = 200,
     Theme = "Dark",
-    Icon = "moon",
+    Icon = "cat",
     Size = UDim2.fromOffset(700,700),
 })
 
@@ -26,7 +26,7 @@ Window:EditOpenButton({
     Title = "打开", 
     Color = ColorSequence.new(Color3.fromHex("#9F88FF"), Color3.fromHex("#28004D")), --颜色渐变
     Draggable = true, --是否可拖动 是
-    Icon = "moon", --悬浮球图标
+    Icon = "crown", --悬浮球图标
     CornerRadius = UDim.new(1, 0), --圆角
     Size = UDim2.fromOffset(700,700),    
 })
@@ -50,7 +50,7 @@ homeTab:Paragraph({ --文字/图片栏
     Image = "moon", --创建图标
     Title = "猫猫的第一个服务器脚本", --副标题
     ImageSize = 68, --图片大小
-    Desc = "qq群展示没有 增加了范围开关", --文本
+    Desc = "qq群1005750419 增加了范围开关", --文本
 })
 
 
