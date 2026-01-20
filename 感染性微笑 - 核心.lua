@@ -16,13 +16,13 @@ local Window = Loaded_Main_Lua:CreateWindow({
     Title = "服务器",
     Transparent = true,
     SideBarWidth = 200,
-    Theme = "Light",
+    Theme = "Dark",
     Icon = "moon",
     Size = UDim2.fromOffset(700,700),
 })
 
 Window:EditOpenButton({
-    StrokeThickness = 4,
+    StrokeThickness = 1,
     Title = "打开", 
     Color = ColorSequence.new(Color3.fromHex("#9F88FF"), Color3.fromHex("#28004D")), --颜色渐变
     Draggable = true, --是否可拖动 是
@@ -50,7 +50,7 @@ homeTab:Paragraph({ --文字/图片栏
     Image = "moon", --创建图标
     Title = "猫猫的第一个服务器脚本", --副标题
     ImageSize = 68, --图片大小
-    Desc = "qq群展示没有", --文本
+    Desc = "qq群展示没有 增加了范围开关", --文本
 })
 
 
@@ -76,7 +76,7 @@ task.wait(0)
 end
     end,
     Title = "攻击",
-    Desc = "痛苦😣",
+    Desc = "循环攻击",
 })
  
 
@@ -89,55 +89,78 @@ Sectionh:Input({
     Desc = "10",
 })
       
-    Sectionh:Button({
-        Title = "修改范围",
-        Icon = "", -- 隐藏图标
-        Callback = function()
-local selectionBox=Instance.new("SelectionBox")
-selectionBox.Adornee=game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"):WaitForChild("BodyAttach")
-selectionBox.Parent=game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"):WaitForChild("BodyAttach")
-selectionBox.Color3=Color3.new(1,0,0)
-game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"):WaitForChild("BodyAttach").Size = Vector3.new(feedbackInput,feedbackInput,feedbackInput)
-        end
-    })        
+Sectionh:Toggle({
+    Value = false,
+    Callback = function(value1)
+    fw1 = value1
+        while fw1 do
+if game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool") then
+    local selBox = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"):WaitForChild("Handle"):FindFirstChildOfClass("SelectionBox") or Instance.new("SelectionBox")
+    selBox.Adornee = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"):WaitForChild("BodyAttach")
+    selBox.Parent = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"):WaitForChild("BodyAttach")
+    game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"):WaitForChild("BodyAttach").Size = Vector3.new(feedbackInput,feedbackInput,feedbackInput)
 
-    Sectionh:Button({
-        Title = "修改范围 针对长枪",
-        Icon = "", -- 隐藏图标
-        Callback = function()
-local selectionBox=Instance.new("SelectionBox")
-selectionBox.Adornee=game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"):WaitForChild("Hitbox")
-selectionBox.Parent=game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"):WaitForChild("Hitbox")
-selectionBox.Color3=Color3.new(1,0,0)
-game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"):WaitForChild("Hitbox").Size = Vector3.new(feedbackInput,feedbackInput,feedbackInput)
-HighlightButton:Highlight()
+end    
+ task.wait(0)       
         end
-    })        
-    
-    Sectionh:Button({
-        Title = "修改范围 针对瓶子/树枝",
-        Icon = "", -- 隐藏图标
-        Callback = function()
-local selectionBox=Instance.new("SelectionBox")
-selectionBox.Adornee=game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"):WaitForChild("Handle")
-selectionBox.Parent=game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"):WaitForChild("Handle")
-selectionBox.Color3=Color3.new(1,0,0)
-game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"):WaitForChild("Handle").Size = Vector3.new(feedbackInput,feedbackInput,feedbackInput)
-HighlightButton:Highlight()
+    end,
+    Title = "修改范围 木棒/武士刀",
+    Desc = "取消后摇",
+})
+
+Sectionh:Toggle({
+    Value = false,
+    Callback = function(value2)
+    fw2 = value2
+        while fw2 do
+if game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool") then
+    local selBox = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"):WaitForChild("Hitbox"):FindFirstChildOfClass("SelectionBox") or Instance.new("SelectionBox")
+    selBox.Adornee = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"):WaitForChild("Hitbox")
+    selBox.Parent = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"):WaitForChild("Hitbox")
+    game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"):WaitForChild("Hitbox").Size = Vector3.new(feedbackInput,feedbackInput,feedbackInput)
+
+end    
+   task.wait(0)     
         end
-    })            
+    end,
+    Title = "修改范围 长枪",
+    Desc = "修改范围",
+})
     
-    Sectionh:Button({
-        Title = "武器去除后摇 - 循环",
-        Icon = "", -- 隐藏图标
-        Callback = function()
-local hy = true
-while hy do        
-game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"):WaitForChild("Cooldown").Value = 0
+Sectionh:Toggle({
+    Value = false,
+    Callback = function(value3)
+    fw3 = value3
+        while fw3 do
+if game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool") then
+    local selBox = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"):WaitForChild("Handle"):FindFirstChildOfClass("SelectionBox") or Instance.new("SelectionBox")
+    selBox.Adornee = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"):WaitForChild("Handle")
+    selBox.Parent = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"):WaitForChild("Handle")
+    game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"):WaitForChild("Handle").Size = Vector3.new(feedbackInput,feedbackInput,feedbackInput)
+task.wait(0)
+end    
+  task.wait(0)      
+        end
+    end,
+    Title = "修改范围 树枝/瓶子",
+    Desc = "修改范围",
+})
+    
+
+Sectionh:Toggle({
+    Value = false,
+    Callback = function(value)
+hy = value
+while hy do
+if game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool") then
+ game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"):WaitForChild("Cooldown").Value = 0
+end
 task.wait(0)
 end
-        end
-    })            
+    end,
+    Title = "武器取消后摇",
+    Desc = "取消后摇",
+})
     
 local Sectionhh = homeTab:Section({
     Title = "道具类",
