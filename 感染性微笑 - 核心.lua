@@ -95,7 +95,7 @@ Sectionh:Toggle({
     fw1 = value1
         while fw1 do
 if game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool") then
-    local selBox = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"):WaitForChild("Handle"):FindFirstChildOfClass("SelectionBox") or Instance.new("SelectionBox")
+    local selBox = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"):WaitForChild("BodyAttach"):FindFirstChildOfClass("SelectionBox") or Instance.new("SelectionBox")
     selBox.Adornee = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"):WaitForChild("BodyAttach")
     selBox.Parent = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"):WaitForChild("BodyAttach")
     game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"):WaitForChild("BodyAttach").Size = Vector3.new(feedbackInput,feedbackInput,feedbackInput)
