@@ -1,0 +1,27 @@
+Loaded_Main_Lua:AddTheme({
+    Name = "Stylish", -- 主题名称：Stylish
+    
+    Accent = Color3.fromHex("#8b5cf6"), -- 强调色：紫色
+    Dialog = Color3.fromHex("#1a1a1a"), -- 对话框背景色：深灰色
+    Outline = Color3.fromHex("#8b5cf6"), -- 轮廓色：紫色
+    Text = Color3.fromHex("#f8fafc"), -- 文本色：浅灰色
+    Placeholder = Color3.fromHex("#a78bfa"), -- 占位文本色：浅紫色
+    Button = Color3.fromHex("#4c1d95"), -- 按钮背景色：深紫色
+    Icon = Color3.fromHex("#c4b5fd"), -- 图标色：淡紫色
+    
+    WindowBackground = Color3.fromHex("#1e1b4b"), -- 窗口背景色：暗紫色
+    
+    TopbarButtonIcon = Color3.fromHex("#c4b5fd"), -- 顶部栏按钮图标色：淡紫色
+    TopbarTitle = Color3.fromHex("#f8fafc"), -- 顶部栏标题色：浅灰色
+    TopbarAuthor = Color3.fromHex("#a78bfa"), -- 顶部栏作者色：浅紫色
+    TopbarIcon = Color3.fromHex("#8b5cf6"), -- 顶部栏图标色：紫色
+    
+    TabBackground = Color3.fromHex("#312e81"), -- 标签页背景色：深紫蓝色
+    TabTitle = Color3.fromHex("#f8fafc"), -- 标签页标题色：浅灰色
+    TabIcon = Color3.fromHex("#c4b5fd"), -- 标签页图标色：淡紫色
+    
+    ElementBackground = Color3.fromHex("#312e81"), -- 元素背景色：深紫蓝色
+    ElementTitle = Color3.fromHex("#f8fafc"), -- 元素标题色：浅灰色
+    ElementDesc = Color3.fromHex("#ddd6fe"), -- 元素描述色：极淡紫色
+    ElementIcon = Color3.fromHex("#c4b5fd"), -- 元素图标色：淡紫色
+})
