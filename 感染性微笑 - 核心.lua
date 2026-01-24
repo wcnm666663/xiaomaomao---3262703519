@@ -17,16 +17,16 @@ local Window = Loaded_Main_Lua:CreateWindow({
     Transparent = true,
     SideBarWidth = 200,
     Theme = "Dark",
-    Icon = "cat",
+    Icon = "formkit:android",
     Size = UDim2.fromOffset(700,700),
 })
 
 Window:EditOpenButton({
     StrokeThickness = 1,
-    Title = "感染性微笑", 
+    Title = "打开", 
     Color = ColorSequence.new(Color3.fromHex("#0000C6"), Color3.fromHex("#FF00FF")), --颜色渐变
     Draggable = true, --是否可拖动 是
-    Icon = "crown", --悬浮球图标
+    Icon = "line-md:account", --悬浮球图标
     CornerRadius = UDim.new(1, 0), --圆角
     Size = UDim2.fromOffset(700,700),    
 })
@@ -43,21 +43,31 @@ Window:Tag({
 
 local homeTab = Window:Tab({ --创建选择栏
     Title = "公告", --文本
-    Icon = "home-2-bold", --图标
+    Icon = "solar:bell-bold", --图标
+})
+
+homeTab:Section({
+    Title = "公告",
+    TextSize = 30,
 })
 
 homeTab:Paragraph({ --文字/图片栏
     Image = "moon", --创建图标
     Title = "猫猫的第一个服务器脚本", --副标题
     ImageSize = 68, --图片大小
-    Desc = "qq群展示没有", --文本
+    Desc = "qq3262703519", --文本
 })
 
 
 local homeTab = Window:Tab({ --创建选择栏
     Title = "幸存者", --文本
-    Icon = "sword", --图标
+    Icon = "iconoir:accessibility", --图标
 })  
+
+homeTab:Section({
+    Title = "幸存者",
+    TextSize = 30,
+})
 
 local Sectionh = homeTab:Section({
     Title = "攻击类",
@@ -74,6 +84,13 @@ if game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"
 end
 task.wait(0)
 end
+ Loaded_Main_Lua:Notify({ -- 显示通知
+  Title = "提示",
+  Content = "开启成功！",
+   --Icon = "solar:bell-bold", -- 隐藏图标（注释）
+   Duration = 1, -- 显示时长：5秒
+  CanClose = false, -- 能否手动关闭：否
+   })         
     end,
     Title = "攻击",
     Desc = "循环攻击",
@@ -103,6 +120,13 @@ if game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"
 end    
  task.wait(0)       
         end
+ Loaded_Main_Lua:Notify({ -- 显示通知
+  Title = "提示",
+  Content = "开启成功！",
+   --Icon = "solar:bell-bold", -- 隐藏图标（注释）
+   Duration = 1, -- 显示时长：5秒
+  CanClose = false, -- 能否手动关闭：否
+   })                 
     end,
     Title = "修改范围 木棒/武士刀",
     Desc = "取消后摇",
@@ -121,6 +145,13 @@ if game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"
 end    
    task.wait(0)     
         end
+ Loaded_Main_Lua:Notify({ -- 显示通知
+  Title = "提示",
+  Content = "开启成功！",
+   --Icon = "solar:bell-bold", -- 隐藏图标（注释）
+   Duration = 1, -- 显示时长：5秒
+  CanClose = false, -- 能否手动关闭：否
+   })                 
     end,
     Title = "修改范围 长枪",
     Desc = "修改范围",
@@ -139,6 +170,13 @@ if game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"
 end    
   task.wait(0)      
         end
+ Loaded_Main_Lua:Notify({ -- 显示通知
+  Title = "提示",
+  Content = "开启成功！",
+   --Icon = "solar:bell-bold", -- 隐藏图标（注释）
+   Duration = 1, -- 显示时长：5秒
+  CanClose = false, -- 能否手动关闭：否
+   })                 
     end,
     Title = "修改范围 树枝/瓶子",
     Desc = "修改范围",
@@ -155,6 +193,13 @@ if game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"
 end
 task.wait(0)
 end
+ Loaded_Main_Lua:Notify({ -- 显示通知
+  Title = "提示",
+  Content = "开启成功！",
+   --Icon = "solar:bell-bold", -- 隐藏图标（注释）
+   Duration = 1, -- 显示时长：5秒
+  CanClose = false, -- 能否手动关闭：否
+   })         
     end,
     Title = "武器取消后摇",
     Desc = "取消后摇",
@@ -175,6 +220,13 @@ if game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"
 end
 task.wait(0)
 end
+ Loaded_Main_Lua:Notify({ -- 显示通知
+  Title = "提示",
+  Content = "开启成功！",
+   --Icon = "solar:bell-bold", -- 隐藏图标（注释）
+   Duration = 1, -- 显示时长：5秒
+  CanClose = false, -- 能否手动关闭：否
+   })         
     end,
     Title = "武器透明",
     Desc = "透明",
@@ -182,8 +234,13 @@ end
 
 local homeTab = Window:Tab({ --创建选择栏
     Title = "感染者", --文本
-    Icon = "laugh", --图标
+    Icon = "home", --图标
 })    
+
+homeTab:Section({
+    Title = "感染者",
+    TextSize = 30,
+})
     
 homeTab:Input({
     Callback = function(value)
@@ -209,8 +266,13 @@ HighlightButton:Highlight()
     
 local homeTab = Window:Tab({ --创建选择栏
     Title = "其他", --文本
-    Icon = "gear", --图标
+    Icon = "iconamoon:3d", --图标
 })        
+
+homeTab:Section({
+    Title = "其他",
+    TextSize = 30,
+})
 
 local Sectionjb = homeTab:Section({
     Title = "拾取类",
@@ -226,7 +288,13 @@ while jinbi == 0 do
 game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = workspace.Map.System["Cargo Shipment"].CoinSpawnSystem.Coins.SmileCoin.CFrame
 task.wait(1)
 end
-
+ Loaded_Main_Lua:Notify({ -- 显示通知
+  Title = "提示",
+  Content = "开启成功！",
+   --Icon = "solar:bell-bold", -- 隐藏图标（注释）
+   Duration = 1, -- 显示时长：5秒
+  CanClose = false, -- 能否手动关闭：否
+   })         
         end
     })                   
     
@@ -241,6 +309,13 @@ game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = wor
 game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = workspace.Particles.RedKey.CFrame
 task.wait(1)
 end
+ Loaded_Main_Lua:Notify({ -- 显示通知
+  Title = "提示",
+  Content = "开启成功！",
+   --Icon = "solar:bell-bold", -- 隐藏图标（注释）
+   Duration = 1, -- 显示时长：5秒
+  CanClose = false, -- 能否手动关闭：否
+   })         
         end
     })                       
     
@@ -256,6 +331,13 @@ fireclickdetector(detector)
 fireclickdetector(detecto)
 task.wait(1)
 end
+ Loaded_Main_Lua:Notify({ -- 显示通知
+  Title = "提示",
+  Content = "开启成功！",
+   --Icon = "solar:bell-bold", -- 隐藏图标（注释）
+   Duration = 1, -- 显示时长：5秒
+  CanClose = false, -- 能否手动关闭：否
+   })         
         end
     })        
                    
@@ -273,17 +355,85 @@ local function clickAll(parent)
 end
 
 clickAll(workspace,Shop)
+ Loaded_Main_Lua:Notify({ -- 显示通知
+  Title = "提示",
+  Content = "开启成功！",
+   --Icon = "solar:bell-bold", -- 隐藏图标（注释）
+   Duration = 1, -- 显示时长：5秒
+  CanClose = false, -- 能否手动关闭：否
+   })         
         end
     })                   
     
+   homeTab:Button({
+        Title = "删除白光 - 部分不支持",
+        Icon = "", -- 隐藏图标
+        Callback = function()
+targetName = "Infectors"
+for _,obj in workspace.Map.System:GetDescendants()do
+    if obj.Name == targetName then
+         obj:Destroy()
+ Loaded_Main_Lua:Notify({ -- 显示通知
+  Title = "提示",
+  Content = "开启成功！",
+   --Icon = "solar:bell-bold", -- 隐藏图标（注释）
+   Duration = 1, -- 显示时长：5秒
+  CanClose = false, -- 能否手动关闭：否
+   })         
+    end
+end
+   end
+    })            
+    
 local homeTab = Window:Tab({ --创建选择栏
-    Title = "透视", --文本
+    Title = "范围配置", --文本
+    Icon = "game-icons:3d-hammer", --图标
+})            
+
+    homeTab:Colorpicker({
+        Flag = "ColorpickerTest", -- 配置标识（用于保存/加载）
+        Title = "范围颜色",
+        Desc = "颜色选择器",
+        Default = Color3.fromRGB(0, 255, 0), -- 默认颜色：绿色
+        Transparency = 0, -- 透明度：0
+        Locked = false, -- 锁定：否
+        Callback = function(color) -- 选择回调（打印颜色）
+            print("背景颜色：" .. tostring(color))
+        end
+    })
+    
+local homeTab = Window:Tab({ --创建选择栏
+    Title = "美化", --文本
     Icon = "home", --图标
 })            
 
+homeTab:Input({
+    Callback = function(value)
+        sound = value
+    end,
+    Placeholder = "输入音效/音乐 ID",
+    Title = "美化攻击音效",
+    Desc = "用于攻击发出声音而修改",
+})
+
+homeTab:Toggle({
+    Value = false,
+    Callback = function(value)
+meihua = value
+while meihua do
+if game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool") then
+ game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"):FindFirstChildOfClass("MeshPart"):WaitForChild("Smack").SoundId = "rbxassetid://"..sound
+game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool"):FindFirstChildOfClass("MeshPart"):WaitForChild("Woosh").SoundId = "rbxassetid://"..sound
+end
+task.wait(1)
+end 
+    end,
+    Title = "美化攻击音效",
+    Desc = "修改音效",
+})
 local uiTab = Window:Tab({ --创建选择栏
     Title = "ui", --文本
-    Icon = "home", --图标
+    Icon = "game-icons:arrow-cursor", --图标
 })            
 
 uiTab:Dropdown({
@@ -301,5 +451,3 @@ uiTab:Button({
         Window:Destroy()
     end,
 })
-
- 
