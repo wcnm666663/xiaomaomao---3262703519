@@ -11,13 +11,13 @@ local Window = Loaded_Main_Lua:CreateWindow({
     Author = "感染性微笑",
     IconThemed = true,
     ScrollBarEnabled = true,
-    Folder = "微笑",
+    Folder = "作者 3262703519",
     HideSearchBar = false,
-    Title = "服务器",
+    Title = "感染性微笑",
     Transparent = true,
     SideBarWidth = 200,
     Theme = "Dark",
-    Icon = "formkit:android",
+    Icon = "moon",
     Size = UDim2.fromOffset(700,700),
 })
 
@@ -26,7 +26,7 @@ Window:EditOpenButton({
     Title = "打开", 
     Color = ColorSequence.new(Color3.fromHex("#0000C6"), Color3.fromHex("#FF00FF")), --颜色渐变
     Draggable = true, --是否可拖动 是
-    Icon = "line-md:account", --悬浮球图标
+    Icon = "crown", --悬浮球图标
     CornerRadius = UDim.new(1, 0), --圆角
     Size = UDim2.fromOffset(700,700),    
 })
@@ -43,7 +43,7 @@ Window:Tag({
 
 local homeTab = Window:Tab({ --创建选择栏
     Title = "公告", --文本
-    Icon = "solar:bell-bold", --图标
+    Icon = "home", --图标
 })
 
 homeTab:Section({
@@ -53,15 +53,15 @@ homeTab:Section({
 
 homeTab:Paragraph({ --文字/图片栏
     Image = "moon", --创建图标
-    Title = "猫猫的第一个服务器脚本", --副标题
+    Title = "增加了美化音效功能", --副标题
     ImageSize = 68, --图片大小
-    Desc = "qq3262703519", --文本
+    Desc = "作者qq3262703519\n快手号xiaomaonbnb666", --文本
 })
 
 
 local homeTab = Window:Tab({ --创建选择栏
     Title = "幸存者", --文本
-    Icon = "iconoir:accessibility", --图标
+    Icon = "home", --图标
 })  
 
 homeTab:Section({
@@ -266,7 +266,7 @@ HighlightButton:Highlight()
     
 local homeTab = Window:Tab({ --创建选择栏
     Title = "其他", --文本
-    Icon = "iconamoon:3d", --图标
+    Icon = "home", --图标
 })        
 
 homeTab:Section({
@@ -319,27 +319,21 @@ end
         end
     })                       
     
-   Sectionjb:Button({
-        Title = "自动拾取主武器 - 规定范围内",
-        Icon = "", -- 隐藏图标
-        Callback = function()
-local toolsq = 0        
-while toolsq == 0 do
-local detector = workspace.Map.HumanBase.Vendor.BatCollection.ClickDetector
+    Sectionjb:Toggle({
+        Title = "自动拾取",
+        Desc = "自动支取主武器",
+        Value = false,
+        Callback = function(value) 
+            sq = value
+            while sq do
+ local detector = workspace.Map.HumanBase.Vendor.BatCollection.ClickDetector
 local detecto = workspace.Map.ConstantTerrain.BatCollection.ClickDetector
 fireclickdetector(detector)
 fireclickdetector(detecto)
-task.wait(1)
-end
- Loaded_Main_Lua:Notify({ -- 显示通知
-  Title = "提示",
-  Content = "开启成功！",
-   --Icon = "solar:bell-bold", -- 隐藏图标（注释）
-   Duration = 1, -- 显示时长：5秒
-  CanClose = false, -- 能否手动关闭：否
-   })         
+task.wait(1)  
+end         
         end
-    })        
+    })
                    
    Sectionjb:Button({
         Title = "点击所有触发",
@@ -387,7 +381,7 @@ end
     
 local homeTab = Window:Tab({ --创建选择栏
     Title = "范围配置", --文本
-    Icon = "game-icons:3d-hammer", --图标
+    Icon = "home", --图标
 })            
 
     homeTab:Colorpicker({
@@ -433,7 +427,7 @@ end
 })
 local uiTab = Window:Tab({ --创建选择栏
     Title = "ui", --文本
-    Icon = "game-icons:arrow-cursor", --图标
+    Icon = "home", --图标
 })            
 
 uiTab:Dropdown({
